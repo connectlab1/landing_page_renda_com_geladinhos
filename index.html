@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Nova Renda com Geladinhos Gourmet | Marrara Bortoloti</title>
+    <meta name="description" content="Aprenda mais de 60 receitas exclusivas de Geladinho Gourmet com Marrara Bortoloti. Transforme sua cozinha em uma fábrica de renda extra!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Outfit & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#4c0519',
+                            gold: '#fbbf24',
+                            goldDark: '#d97706',
+                            dark: '#0f172a',
+                            surface: '#fdfbfb'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #faf9f9;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .mesh-gradient-hero {
+            background: radial-gradient(circle at 10% 10%, rgba(244, 63, 94, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 241, 242, 0.5) 0%, #faf9f9 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 228, 230, 0.6);
+        }
+
+        .glass-card-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pulse-emerald {
+            animation: pulse-green 2.2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 18px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.35) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            20% { transform: translateX(100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .floating-badge {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body class="antialiased pb-20 md:pb-0">
+
+    <!-- 1. TOP URGENCY BANNER WITH COUNTDOWN -->
+    <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-brand-900 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide shadow-md sticky top-0 z-50 flex items-center justify-center gap-3">
+        <div class="flex items-center gap-1.5 font-bold text-amber-300 uppercase tracking-wider">
+            <i class="fa-solid fa-fire text-amber-400 animate-bounce"></i>
+            <span>Desconto de Lançamento</span>
+        </div>
+        <span class="hidden sm:inline text-pink-200">|</span>
+        <div class="flex items-center gap-1">
+            <span class="text-pink-100">Oferta expira em:</span>
+            <div class="bg-black/40 px-2 py-0.5 rounded font-mono font-bold text-amber-300" id="countdown">14:59</div>
+        </div>
+    </div>
+
+    <!-- 2. HEADER -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-pink-100/60 sticky top-[37px] z-40 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                    <i class="fa-solid fa-ice-cream text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-black text-lg sm:text-2xl text-slate-900 leading-none">
+                        Geladinhos<span class="text-brand-500">Gourmet</span>
+                    </span>
+                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-semibold mt-0.5">Marrara Bortoloti</span>
+                </div>
+            </div>
+
+            <!-- Quick Action Button -->
+            <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold px-6 py-2.5 rounded-full text-sm transition-all shadow-md shadow-brand-500/20 hover:shadow-lg active:scale-95">
+                <span>Garantir Vaga</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 3. HERO SECTION -->
+        <section class="relative pt-8 pb-16 sm:pt-16 sm:pb-24 mesh-gradient-hero overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left Column: Copy & Value Proposition -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <!-- Author Badge -->
+                        <div class="inline-flex items-center gap-2 bg-pink-100/80 border border-pink-200 text-brand-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-sm">
+                            <i class="fa-solid fa-award text-amber-500"></i>
+                            <span>Método Criado por Marrara Bortoloti</span>
+                        </div>
+                        
+                        <!-- Main Headline -->
+                        <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.12]">
+                            Transforme a Sua Cozinha em uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-pink-600 to-amber-500">Fábrica de Renda Extra</span>
+                        </h1>
+                        
+                        <!-- Subheadline -->
+                        <p class="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Descubra o passo a passo com mais de <strong>60 receitas exclusivas e lucrativas de Geladinho Gourmet</strong> para você faturar no conforto de casa, mesmo sem experiência anterior em doces!
+                        </p>
+
+                        <!-- Highlights Quick List -->
+                        <div class="glass-card p-4 sm:p-6 rounded-3xl text-left max-w-xl mx-auto lg:mx-0 space-y-3 shadow-lg shadow-pink-500/5">
+                            <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base font-medium">
+                                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span><strong>Base Cremosa Perfeita:</strong> Sem cristais de gelo nem água acumulada.</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base font-medium">
+                                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span><strong>Baixíssimo Investimento:</strong> Comece hoje com utensílios que você já possui.</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base font-medium">
+                                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span><strong>Lucratividade Alta:</strong> Guia com precificação exata e cálculo de custos.</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Pulsing CTA Button -->
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="pulse-emerald shine-effect w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-heading font-black text-lg sm:text-xl px-10 py-5 rounded-2xl shadow-xl shadow-emerald-500/25 active:scale-95 transition-all uppercase tracking-wide">
+                                <span>QUERO MINHA APOSTILA AGORA</span>
+                                <i class="fa-solid fa-arrow-right ml-3"></i>
+                            </a>
+                        </div>
+
+                        <!-- Trust / Security Seals -->
+                        <div class="pt-2 flex items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-500 font-medium">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-600"></i> Compra 100% Segura</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-500"></i> Acesso Imediato</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-medal text-blue-500"></i> 7 Dias de Garantia</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Showcase & Pricing Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            
+                            <!-- Floating Promo Badge -->
+                            <div class="absolute -top-4 -right-2 z-20 floating-badge bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 font-black text-xs px-4 py-2 rounded-full shadow-lg border-2 border-white flex items-center gap-1 uppercase tracking-wider">
+                                <i class="fa-solid fa-gift"></i>
+                                <span>4 Bônus Inclusos</span>
+                            </div>
+
+                            <div class="bg-white p-6 sm:p-8 rounded-[2.5rem] shadow-2xl border border-pink-100 text-center space-y-6">
+                                
+                                <!-- Mockup Card Visual Header -->
+                                <div class="bg-gradient-to-tr from-brand-900 via-brand-800 to-brand-600 rounded-2xl p-6 text-white space-y-3 relative overflow-hidden shadow-inner">
+                                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto backdrop-blur-md border border-white/20 shadow-md">
+                                        <i class="fa-solid fa-book-open text-3xl text-amber-300"></i>
+                                    </div>
+                                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-amber-300">Apostila Digital Geladinho Gourmet</h3>
+                                    <p class="text-xs text-pink-100 max-w-xs mx-auto">Edição Oficial Marrara Bortoloti • Formato PDF em Alta Resolução</p>
+                                    <span class="inline-block bg-white/20 text-white text-[11px] px-3 py-1 rounded-full font-bold uppercase tracking-widest backdrop-blur-sm">Acesso Vitalício</span>
+                                </div>
+
+                                <!-- Official Price Display -->
+                                <div class="bg-pink-50/70 p-5 rounded-2xl border border-pink-200/80 text-center space-y-1">
+                                    <span class="text-xs text-slate-500 uppercase tracking-widest font-bold">Por apenas</span>
+                                    <div class="flex items-baseline justify-center gap-2">
+                                        <span class="text-base font-bold text-slate-400 line-through">R$ 97,00</span>
+                                        <span class="text-3xl sm:text-4xl font-black text-emerald-600 font-heading">R$ 67,00</span>
+                                    </div>
+                                    <span class="text-xs text-slate-700 font-bold block pt-1">
+                                        ou em até <span class="text-brand-600 text-sm">10x de R$ 8,05</span> * no cartão
+                                    </span>
+                                </div>
+
+                                <!-- Card Action Button -->
+                                <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="block w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-heading font-black text-lg py-4 rounded-2xl shadow-lg shadow-brand-500/20 transition-all uppercase tracking-wider">
+                                    Aproveitar Promoção
+                                </a>
+
+                                <div class="flex justify-center items-center gap-4 text-xs text-slate-400 pt-1">
+                                    <span><i class="fa-solid fa-credit-card text-slate-500"></i> Cartão</span>
+                                    <span>•</span>
+                                    <span><i class="fa-solid fa-pix text-emerald-600"></i> Pix (Liberação Imediata)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FOR WHOM SECTION -->
+        <section class="py-16 sm:py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-brand-600 font-extrabold text-xs tracking-widest uppercase bg-pink-100/80 px-4 py-1.5 rounded-full inline-block">
+                        Oportunidade Transformadora
+                    </span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
+                        Para quem é a Apostila de Geladinhos Gourmet?
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Desenvolvida para ajudar mulheres a alcançarem a liberdade financeira com um produto simples e de altíssima procura.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-slate-50 hover:bg-white p-8 rounded-3xl border border-slate-100 hover:border-pink-300 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-pink-100 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white transition-all shadow-sm">
+                            <i class="fa-solid fa-house-user"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl mb-3 text-slate-900">Donas de Casa</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Conquiste sua própria independência financeira sem precisar se ausentar da rotina e dos cuidados com seus filhos.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-slate-50 hover:bg-white p-8 rounded-3xl border border-slate-100 hover:border-pink-300 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all shadow-sm">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl mb-3 text-slate-900">Mulheres Desempregadas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Uma fonte de renda rápida, digna e de retorno imediato para dar a volta por cima investindo pouquíssimo.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-slate-50 hover:bg-white p-8 rounded-3xl border border-slate-100 hover:border-pink-300 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl mb-3 text-slate-900">Empreendedoras</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Diversifique o cardápio do seu negócio de confeitaria com novidades geladas irresistíveis que vendem todo dia.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-slate-50 hover:bg-white p-8 rounded-3xl border border-slate-100 hover:border-pink-300 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl mb-3 text-slate-900">Iniciantes Absolutas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mesmo que você nunca tenha feito doces para vender na vida, o passo a passo é extremamente prático e didático.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WHAT YOU WILL LEARN / CONTENT SECTION -->
+        <section class="py-16 sm:py-24 bg-gradient-to-b from-pink-50/50 via-white to-pink-50/30 border-y border-pink-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="bg-brand-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block">
+                            Conteúdo Completo & Passo a Passo
+                        </span>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
+                            O que você vai encontrar dentro da Apostila?
+                        </h2>
+                        <p class="text-slate-600 text-base sm:text-lg">
+                            Tudo foi cuidadosamente testado por <strong>Marrara Bortoloti</strong> para garantir produtos de textura aveludada, sabor incomparável e visual de arrancar suspiros dos clientes.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            
+                            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-pink-100 hover:border-pink-300 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-pink-100 text-brand-600 flex items-center justify-center font-black text-xl shrink-0 font-heading">
+                                    60+
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-slate-900 text-lg">Mais de 60 Receitas Gourmet Exclusivas</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">As opções mais pedidas e vendidas: Ninho com Nutella, Oreo, Sensação, Sonho de Valsa, Frutas Tropicais e Alcoólicos.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-pink-100 hover:border-pink-300 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-slate-900 text-lg">O Segredo da Base Cremosa Perfeita</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Aprenda a proporção exata para que seus geladinhos nunca fiquem com cristais de gelo ou com aspecto aguado.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-pink-100 hover:border-pink-300 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-slate-900 text-lg">Precificação Descomplicada & Margem de Lucro</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Calcule os custos de cada ingrediente, embalagem e tempo para definir o preço final garantindo ótimo lucro.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-pink-100 hover:border-pink-300 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-box-archive"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-slate-900 text-lg">Técnicas de Armazenamento e Validade</h4>
+                                    <p class="text-xs sm:text-sm text-slate-600 mt-0.5">Como conservar o produto por semanas no freezer mantendo a cremosidade e o frescor dos ingredientes.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Showcase Box -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-full bg-gradient-to-b from-white to-pink-50/50 p-8 rounded-3xl shadow-xl border border-pink-200 text-center space-y-6">
+                            
+                            <div class="w-20 h-20 bg-brand-500/10 text-brand-600 rounded-3xl flex items-center justify-center mx-auto text-3xl">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="font-heading font-bold text-2xl text-slate-900">Material 100% Digital</h3>
+                                <p class="text-slate-600 text-sm">
+                                    Acesse imediatamente após a compra diretamente no seu celular, tablet ou computador. Você também pode imprimir se preferir!
+                                </p>
+                            </div>
+
+                            <div class="border-t border-pink-100 pt-6 grid grid-cols-3 gap-2 text-center text-xs font-semibold text-slate-700">
+                                <div class="space-y-1">
+                                    <i class="fa-solid fa-mobile-screen text-brand-500 text-lg block"></i>
+                                    <span>No Celular</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <i class="fa-solid fa-print text-purple-500 text-lg block"></i>
+                                    <span>Pronto p/ Imprimir</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <i class="fa-solid fa-infinity text-emerald-500 text-lg block"></i>
+                                    <span>Acesso Vitalício</span>
+                                </div>
+                            </div>
+
+                            <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="block w-full bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-bold py-3.5 rounded-2xl shadow-md transition">
+                                QUERO APRENDER AGORA
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. BONUS SECTION -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block border border-amber-200">
+                        <i class="fa-solid fa-gift mr-1 text-amber-600"></i> Presentes Exclusivos
+                    </span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900">
+                        Comprando HOJE você recebe <span class="text-brand-500">4 Bônus Gratuitos</span>
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Maximize seus lucros oferecendo variadas sobremesas geladas durante o ano inteiro.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Bonus 1 -->
+                    <div class="bg-gradient-to-b from-slate-50 to-pink-50/30 p-6 rounded-3xl border border-pink-100 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-bold text-brand-600 bg-pink-100 px-3 py-1 rounded-full uppercase">Bônus 1</span>
+                                <span class="text-xs text-slate-400 line-through font-bold">R$ 47,00</span>
+                            </div>
+                            <div class="w-12 h-12 bg-pink-500 text-white rounded-2xl flex items-center justify-center text-xl mb-4 shadow-md">
+                                <i class="fa-solid fa-ice-cream"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Apostila de Sorvetes Caseiros</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Receitas de sorvetes artesanais cremosos para enriquecer o seu menu de sobremesas.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-pink-100 text-emerald-600 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> 100% Gratuito
+                        </div>
+                    </div>
+
+                    <!-- Bonus 2 -->
+                    <div class="bg-gradient-to-b from-slate-50 to-pink-50/30 p-6 rounded-3xl border border-pink-100 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-bold text-brand-600 bg-pink-100 px-3 py-1 rounded-full uppercase">Bônus 2</span>
+                                <span class="text-xs text-slate-400 line-through font-bold">R$ 47,00</span>
+                            </div>
+                            <div class="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-xl mb-4 shadow-md">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Apostila de Picolés Gourmet</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Receitas práticas de picolés recheados para encantar crianças e adultos nos dias de calor.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-pink-100 text-emerald-600 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> 100% Gratuito
+                        </div>
+                    </div>
+
+                    <!-- Bonus 3 -->
+                    <div class="bg-gradient-to-b from-slate-50 to-pink-50/30 p-6 rounded-3xl border border-pink-100 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-bold text-brand-600 bg-pink-100 px-3 py-1 rounded-full uppercase">Bônus 3</span>
+                                <span class="text-xs text-slate-400 line-through font-bold">R$ 37,00</span>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-500 text-white rounded-2xl flex items-center justify-center text-xl mb-4 shadow-md">
+                                <i class="fa-solid fa-whiskey-glass"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Apostila de Milkshakes Irresistíveis</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Combinações surpreendentes de milkshakes gourmets super fáceis de preparar.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-pink-100 text-emerald-600 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> 100% Gratuito
+                        </div>
+                    </div>
+
+                    <!-- Bonus 4 -->
+                    <div class="bg-gradient-to-b from-slate-50 to-pink-50/30 p-6 rounded-3xl border border-pink-100 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-xs font-bold text-brand-600 bg-pink-100 px-3 py-1 rounded-full uppercase">Bônus 4</span>
+                                <span class="text-xs text-slate-400 line-through font-bold">R$ 27,00</span>
+                            </div>
+                            <div class="w-12 h-12 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-xl mb-4 shadow-md">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Tags & Etiquetas Prontas p/ Imprimir</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Modelos lindos de etiquetas prontas para recortar e dar um acabamento profissional às embalagens.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-3 border-t border-pink-100 text-emerald-600 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-check"></i> 100% Gratuito
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center mt-12">
+                    <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="pulse-emerald inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-black text-lg px-8 py-4 rounded-2xl shadow-xl transition-all">
+                        <span>GARANTIR TODOS OS BÔNUS AGORA</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. AUTHOR SECTION -->
+        <section class="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Avatar Box -->
+                    <div class="md:col-span-5 flex justify-center">
+                        <div class="relative">
+                            <div class="w-52 h-52 sm:w-64 sm:h-64 rounded-3xl bg-gradient-to-tr from-brand-500 to-amber-400 p-1.5 shadow-2xl">
+                                <div class="w-full h-full bg-slate-900 rounded-[22px] flex flex-col items-center justify-center text-center p-6 border border-white/10">
+                                    <div class="w-24 h-24 bg-gradient-to-tr from-brand-500 to-amber-400 rounded-full flex items-center justify-center font-heading font-black text-3xl text-white shadow-lg mb-3">
+                                        MB
+                                    </div>
+                                    <h4 class="font-heading font-bold text-lg text-white">Marrara Bortoloti</h4>
+                                    <span class="text-xs text-amber-300">Confeiteira & Mentora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Author Details -->
+                    <div class="md:col-span-7 space-y-4 text-center md:text-left">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Sua Instrutora</span>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white">
+                            Conheça Marrara Bortoloti
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Confeiteira de mão cheia e mentora de milhares de empreendedoras por todo o Brasil. Marrara dedicou os últimos anos da sua carreira a ensinar mulheres comuns a conquistarem sua autonomia financeira diretamente da cozinha de suas casas.
+                        </p>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Seus métodos de ensino destacam-se pela praticidade, baixo custo inicial e foco em produtos de alta rotatividade com receitas testadas e aprovadas!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SOCIAL PROOF / TESTIMONIALS SECTION -->
+        <section class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-brand-500 text-xs font-bold uppercase tracking-widest">Depoimentos Reais</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">
+                        O que dizem as nossas alunas
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base">Histórias de quem já começou a faturar vendendo Geladinhos Gourmet:</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+                    
+                    <!-- Review 1 -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                        <div>
+                            <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "Estava desempregada e sem rumo. Comprei a apostila com o último dinheiro que me restava e no primeiro fim de semana vendi 60 geladinhos! O de Ninho com Nutella é o campeão de vendas!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                            <div class="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                                CL
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Camila Lima</h4>
+                                <span class="text-xs text-slate-500">São Paulo / SP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                        <div>
+                            <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "O conteúdo é super explicativo, bem fácil de seguir e as dicas de conservação mudaram tudo por aqui. Não fica nem um cristalzinho de gelo. Valeu cada centavo!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                            <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                                RS
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Renata Santos</h4>
+                                <span class="text-xs text-slate-500">Belo Horizonte / MG</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                        <div>
+                            <div class="flex text-amber-400 text-xs gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "As tags prontas para imprimir ajudaram demais! Imprimi em casa mesmo e a apresentação ficou com ar super profissional. As pessoas compram com os olhos!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+                            <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                                FF
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Fernanda Freitas</h4>
+                                <span class="text-xs text-slate-500">Curitiba / PR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. GUARANTEE SECTION -->
+        <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-pink-50/40">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-amber-50 to-pink-50 p-8 sm:p-12 rounded-3xl border border-amber-200 text-center shadow-md relative overflow-hidden">
+                    <div class="w-20 h-20 bg-gradient-to-tr from-amber-400 to-amber-500 text-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900 mb-4">
+                        Garantia Incondicional de 7 Dias!
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
+                        Você tem 7 dias inteiros para testar o material. Se por qualquer motivo achar que o e-book não é para você ou não gostar das receitas, basta nos enviar um e-mail para receber <strong>100% do seu dinheiro de volta</strong>.
+                    </p>
+                    <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-slate-600 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
+                        Risco ZERO para Você!
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FINAL OFFER SUMMARY & CTA SECTION -->
+        <section class="py-16 sm:py-24 bg-white" id="oferta">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <div class="bg-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl border-2 border-pink-200 text-center relative">
+                    
+                    <span class="bg-brand-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+                        Oferta Promocional de Lançamento
+                    </span>
+                    
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 mt-4 mb-2">
+                        Uma Nova Renda com Geladinhos
+                    </h2>
+                    <p class="text-slate-500 text-sm mb-6">Por Marrara Bortoloti</p>
+
+                    <!-- Bundle Includes List -->
+                    <div class="bg-slate-50 p-6 rounded-2xl text-left space-y-3.5 mb-8 border border-slate-200/80">
+                        <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span>Apostila Principal com mais de 60 Receitas Gourmet</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span><strong>Bônus 1:</strong> Apostila de Sorvetes Caseiros</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span><strong>Bônus 2:</strong> Apostila de Picolés Gourmet</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span><strong>Bônus 3:</strong> Apostila de Milkshakes Irresistíveis</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-700 text-sm sm:text-base">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span><strong>Bônus 4:</strong> Tags e Etiquetas Prontas para Imprimir</span>
+                        </div>
+                    </div>
+
+                    <!-- Final Price Box -->
+                    <div class="mb-8">
+                        <span class="text-slate-400 text-sm block font-medium">De <span class="line-through">R$ 97,00</span> por apenas</span>
+                        <div class="my-2">
+                            <span class="text-4xl sm:text-6xl font-black text-emerald-600 font-heading block">R$ 67,00</span>
+                            <span class="text-slate-700 text-sm font-bold block mt-1">
+                                ou em até <span class="text-brand-600 font-black">10x de R$ 8,05</span> * no cartão
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Final CTA Button -->
+                    <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="pulse-emerald shine-effect block w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-heading font-black text-lg sm:text-xl py-5 rounded-2xl shadow-xl shadow-emerald-500/30 transition-all uppercase tracking-wide">
+                        <span>SIM! QUERO GARANTIR MINHA APOSTILA</span>
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+
+                    <div class="mt-4 flex justify-center items-center gap-6 text-slate-400 text-xs">
+                        <span><i class="fa-solid fa-lock text-emerald-600"></i> Pagamento 100% Seguro</span>
+                        <span><i class="fa-solid fa-bolt text-amber-500"></i> Envio Imediato por E-mail</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FAQ ACCORDION SECTION -->
+        <section class="py-16 sm:py-24 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Dúvidas Frequentes</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 mt-1">
+                        Perguntas Frequentes
+                    </h2>
+                </div>
+
+                <div class="space-y-4" id="faqAccordion">
+                    
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button class="w-full text-left p-5 font-bold font-heading text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq1')">
+                            <span>Como vou receber a minha apostila?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300" id="icon-faq1"></i>
+                        </button>
+                        <div id="faq1" class="hidden p-5 pt-0 text-slate-600 text-sm border-t border-slate-100 leading-relaxed">
+                            O material é 100% digital em formato PDF. Assim que o pagamento for confirmado, os dados de acesso são enviados imediatamente para o seu e-mail cadastrado na Hotmart.
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button class="w-full text-left p-5 font-bold font-heading text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq2')">
+                            <span>Preciso comprar equipamentos caros para começar?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300" id="icon-faq2"></i>
+                        </button>
+                        <div id="faq2" class="hidden p-5 pt-0 text-slate-600 text-sm border-t border-slate-100 leading-relaxed">
+                            Não! Você pode começar utilizando utensílios simples que já possui em casa: liquidificador, jarra, funil e saquinhos de geladinho.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button class="w-full text-left p-5 font-bold font-heading text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq3')">
+                            <span>Nunca fiz doces para vender, vou conseguir acompanhar?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300" id="icon-faq3"></i>
+                        </button>
+                        <div id="faq3" class="hidden p-5 pt-0 text-slate-600 text-sm border-t border-slate-100 leading-relaxed">
+                            Com certeza! A metodologia foi criada pensando especialmente em iniciantes, trazendo receitas explicadas passo a passo, ponto exato da base e cálculo de custos.
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button class="w-full text-left p-5 font-bold font-heading text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq4')">
+                            <span>Quais são as formas de pagamento disponíveis?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300" id="icon-faq4"></i>
+                        </button>
+                        <div id="faq4" class="hidden p-5 pt-0 text-slate-600 text-sm border-t border-slate-100 leading-relaxed">
+                            Você pode pagar via Pix (com liberação imediata), Cartão de Crédito em até 10x de R$ 8,05 ou Boleto Bancário.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 13. FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 px-4 text-xs border-t border-slate-800">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <p class="font-bold text-slate-300">Uma Nova Renda com Geladinhos — Marrara Bortoloti</p>
+            <p>Este produto não garante a obtenção de resultados sem a devida dedicação e aplicação das técnicas ensinadas.</p>
+            <p>© 2026 Marrara Bortoloti. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- 12. MOBILE STICKY FLOATING CTA BAR -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md p-3 border-t border-slate-200 shadow-2xl z-50 flex items-center justify-between gap-3">
+        <div class="pl-1">
+            <span class="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">Por apenas</span>
+            <span class="font-heading font-black text-emerald-600 text-lg leading-tight">R$ 67,00</span>
+            <span class="text-[9px] text-slate-600 block">ou 10x R$ 8,05</span>
+        </div>
+        <a href="https://pay.hotmart.com/K107613535Q?off=q07hcgng&hotfeature=51" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-600 text-white font-heading font-extrabold text-xs px-5 py-3 rounded-xl shadow-md uppercase tracking-wider flex items-center gap-2">
+            <span>Comprar Agora</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- FAQ Toggle & Countdown Script -->
+    <script>
+        // FAQ Accordion logic
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Countdown Timer Logic
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration; // restart timer
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const fifteenMinutes = 60 * 14 + 59;
+            const display = document.querySelector('#countdown');
+            if (display) {
+                startTimer(fifteenMinutes, display);
+            }
+        };
+    </script>
+</body>
+</html>
